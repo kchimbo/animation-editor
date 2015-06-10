@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  --------------------------------------------
+  --        FETLab - June 2015              --
+  --    Osamu Fujimoto <oaf7862@rit.edu>    --
+  --------------------------------------------
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>FETLab - Matrix Creator</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/pure-min.css">
+    <link rel="stylesheet" href="assets/marketing.css">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Header font -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- Body text -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+
+<body onload="generateBinary(null)">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="" style="font-family: 'Montserrat', sans-serif;">Women in Computing - Hardware Demo Day</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="javascript:new_matrix()" class="pure-menu-link">New Frame</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Reset all</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Export</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Animate</a></li>
+        </ul>
+        </div>
+    </div>
+
+    
+
+    <!-- CONTENT -->
+
+    <!--<div class="new_matrix pure-u-24-24">
+        <button class=" button pure-button pure-button-active" onclick="new_matrix()">new Matrix</button>
+    </div>-->
+
+    <div class="container">
+        <br/><br />
+        <div class="matrix_section ">
+            <h2 class="matrix_name" style="font-family: 'Roboto', sans-serif;">Frame 1</h2>
+            <div class="pure-u-6-24 matrix_table">
+                <table class="pure-table pure-table-bordered">
+                    <tbody>
+                        <tr>
+                            <td data-id="1" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="2" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="3" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="4" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="5" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="6" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="7" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="8" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="9" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="10" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="11" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="12" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="13" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="14" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="15" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="16" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="17" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="18" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="19" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="20" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="21" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="22" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="23" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="24" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="25" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="26" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="27" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="28" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="29" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="30" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="31" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="32" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="33" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="34" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="35" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="36" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="37" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="38" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="39" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="40" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="41" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="42" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="43" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="44" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="45" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="46" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="47" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="48" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="49" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="50" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="51" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="52" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="53" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="54" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="55" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="56" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                        <tr>
+                            <td data-id="57" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="58" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="59" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="60" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="61" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="62" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="63" onmousedown="switchValue($(this))">0</td>
+                            <td data-id="64" onmousedown="switchValue($(this))">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pure-u-3-24 matrix_control">
+                <div class="reset_button pure-u-24-24">
+                    <button class=" button pure-button pure-button-active" onclick="resetmatrix($(this))">Reset</button>
+                </div>
+                <textarea class="pure-u-24-24 txtBinary" onpaste="updateBinary($(this))" onkeyup="updateBinary($(this))" cols="14" rows="9">
+
+                </textarea>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

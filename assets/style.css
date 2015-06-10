@@ -1,0 +1,63 @@
+        .active {
+            background-color: #DB5185 !important;
+        }
+        
+        .matrix_table {
+        	min-width: 330px;
+        }
+        
+        .txtBinary {
+            resize: none;
+            font-size: 1.3em;
+        }
+        
+        .matrix_section {
+              text-align: center;
+        }
+        
+        .matrix_section td {
+            cursor: pointer;
+        }
+        
+        .matrix_control {
+            margin-left: 100px;
+              min-width: 130px;
+        }
+        
+        .reset_button {
+            padding: 3px;
+            text-align: center;
+            margin-bottom: 19px;
+        }
+        
+        .new_matrix {
+            padding: 20px 0 20px 0;
+            text-align: right;
+        }
+        
+        .new_matrix .button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .matrix_name{
+        	padding: 10px;
+        }
+        .container{
+          padding-bottom: 100px;
+        }
+	@media  (max-width: 600px) {
+		.matrix_control {
+		  margin-left: 50px;
+		}
+	}
+	@media  (max-width: 543px) {
+		.matrix_control {
+		  margin-left: 50px;
+		  margin-right: 50px;
+		  margin-top: 20px;
+		}
+        .pure-table td, .pure-table th {
+          padding: .5em .98em;
+        }
+	}
