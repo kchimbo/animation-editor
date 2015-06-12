@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Export</title>
+
+</head>
+<body>
+	<div id="export_1">
+		
+	</div>
+</body>
+	<script>
+	function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+(function(){
+	var export_url = getParameterByName('data').split('}').join('}<br>');
+
+	document.getElementById('export_1').innerHTML = export_url;
+	})();
+	</script>
+</html>

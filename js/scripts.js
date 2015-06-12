@@ -87,3 +87,13 @@
 	    $(document).find('.matrix_section').last().find('.matrix_name').text('Frame ' + $('.matrix_section').size())
 	    generateBinary($(document).find('.matrix_section').last().find('.pure-table'));
 	}
+
+	function export_url() {
+	    var value = '';
+	    $('.txtBinary').each(function(index, el) {
+	    	value+= $(el).val();
+	    });
+	    var url = 'export/index.html?data='+value;
+		var win = window.open(url, '_blank');
+  		win.focus();
+	}
