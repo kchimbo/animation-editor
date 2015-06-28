@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--
-  --------------------------------------------
-  --        FETLab - June 2015              --
-  --    Osamu Fujimoto <oaf7862@rit.edu>    --
-  --------------------------------------------
--->
 <head>
     <meta charset="UTF-8">
-    <title>FETLab - Matrix Creator</title>
+    <title>FETLab</title>
 
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/pure-min.css">
     <link rel="stylesheet" href="assets/marketing.css">
-    <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/modal.css">
-
-
-    <!-- Header font -->
+    <link rel="stylesheet" href="assets/jquery.simplecolorpicker.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <style id="activeItem">
+        .active {background-color: #dc2127 !important;}
+    </style>
+    <!-- fonts : monsertat for the header, roboto for the body -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <!-- Body text -->
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/jquery.simplecolorpicker.js"></script>
     <script src="js/scripts.js"></script>
-    <script type="text/javascript">
-        $('#myModal').modal()</script>
 
 </head>
 
 <body onload="generateBinary(null)">
 
-    <!-- HEADER -->
+    <!-- ***************************** -->
+    <!-- ********** header *********** -->
+    <!-- ***************************** -->
+
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="" style="font-family: 'Montserrat', sans-serif;">Women in Computing - Hardware Demo Day</a>
-
+            <a class="pure-menu-heading" href="" style="font-family: 'Montserrat', sans-serif;">FETLAB | WOMEN IN COMPUTING DEMO DAY</a>
+           
         <ul class="pure-menu-list">
             <li class="pure-menu-item"><a href="javascript:new_matrix()" class="pure-menu-link">New Frame</a></li>
-            <li class="pure-menu-item"><a href="#myModal" class="pure-menu-link" data-toggle="modal">Reset all</a></li>
-            <li class="pure-menu-item"><a href="javascript:export_url()" target="_blank" class="pure-menu-link">Export</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Animate</a></li>
+            <li class="pure-menu-item"><a href="javascript:reset_all()" class="pure-menu-link">Reset All</a></li>
+            <li class="pure-menu-item"><a href="#myModal" class="pure-menu-link" data-toggle="modal">Export</a></li>
+            <!-- remove js: export-url() -->
+            <li class="pure-menu-item"><a href="#animateModal" class="pure-menu-link" data-toggle="modal">Animate</a></li>
         </ul>
+        <div class="colorpicker">
+             <select name="colorpicker" onchange="changeColor($(this).val())">
+                  <option value="#dc2127">Red</option>
+                  <option value="#5484ed">Blue</option>
+                  <option value="#fbd75b">Yellow</option>
+                  <option value="#51b749">Green</option>
+                  <option value="#c1ff61">Yellow-Green</option>
+                </select>
+            </div>
         </div>
     </div>
 
-    
-
-    <!-- CONTENT -->
-
-    <!--<div class="new_matrix pure-u-24-24">
-        <button class=" button pure-button pure-button-active" onclick="new_matrix()">new Matrix</button>
-    </div>-->
+    <!-- ***************************** -->
+    <!-- ********** main  ********* -->
+    <!-- ***************************** -->
 
     <div class="container">
         <br/><br />
@@ -149,7 +151,7 @@
 
             <div class="pure-u-3-24 matrix_control">
                 <div class="reset_button pure-u-24-24">
-                    <button class=" button pure-button pure-button-active" onclick="resetmatrix($(this))">Reset</button>
+                    <button class=" button pure-button pure-button-active resetmatrix_button" onclick="resetmatrix($(this))">Reset</button>
                 </div>
                 <textarea class="pure-u-24-24 txtBinary" onpaste="updateBinary($(this))" onkeyup="updateBinary($(this))" cols="14" rows="9">
 
@@ -158,7 +160,9 @@
         </div>
     </div>
 
-    <!-- MODAL -->
+    <!-- ***************************** -->
+    <!-- ******  export window  ****** -->
+    <!-- ***************************** -->
 
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -179,8 +183,32 @@
         <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
     </div>
+        
+    <!-- ***************************** -->
+    <!-- ***** animation window  ***** -->
+    <!-- ***************************** -->
 
-    <!-- /MODAL -->
+    <div id="animateModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="animateModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <h1 id="animateModalLabel">Animation</h1>
+        <button id="animation_control" class="pure-button start_animation" onclick="toogleAnimate()"></button>
+        <select id="animation_speed" class="pure-button" onchange="speedChange()">
+            <option value="500">0.5 sec</option>
+            <option value="1000">1 sec</option>
+        </select>
+    </div>
+
+    <div class="modal-body">
+        <ul class="frames_section">
+            
+        </ul>
+    </div>
+
+    <div class="modal-footer">
+        <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+    </div>
+
 </body>
 
 </html>

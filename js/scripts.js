@@ -1,5 +1,9 @@
 	$(document).ready(function() {
 	    matrix_content = $('.matrix_section').html();
+
+	    $('select[name="colorpicker"]').simplecolorpicker({theme: 'regularfont'});
+		$('select[name="colorpicker"]').simplecolorpicker('selectColor', '#dc2127');
+
 	});
 	function switchValue(obj) {
 	    if (obj.text() == "0") {
@@ -37,7 +41,7 @@
 	            if (i - 1 == 0)
 	                value += "{B";
 	            else
-	                value += "B";
+	                value +=  "B";
 	        }
 	        if (tdObj.text() == "0") {
 	            value += "0";
@@ -97,3 +101,75 @@
 		var win = window.open(url, '_blank');
   		win.focus();
 	}
+
+	function toogleAnimate() {
+			if(typeof animation != "undefined")
+				clearInterval(animation)
+		
+			if($('#animation_control').hasClass('start_animation')){
+				$('#animation_control').text('Stop');
+			var speed = $('#animation_speed').val();
+			animation = setInterval(function() {
+					var item = $('#animateModal .frames_section .animate_item.active_item');
+					item.removeClass('active_item');
+
+					if(item.next().length == 0){
+						nextItem = $('#animateModal .frames_section .animate_item').first();
+					}else{
+						nextItem = item.next();
+					}
+						nextItem.addClass('active_item');
+				}, speed);
+		}else{
+				$('#animation_control').text('Start');
+			
+		}
+		$('#animation_control').toggleClass('start_animation');	
+
+	}
+	function speedChange() {
+			if(typeof animation != "undefined"){
+				clearInterval(animation)
+			var speed = $('#animation_speed').val();
+			animation = setInterval(function() {
+					var item = $('#animateModal .frames_section .animate_item.active_item');
+					item.removeClass('active_item');
+
+					if(item.next().length == 0){
+						nextItem = $('#animateModal .frames_section .animate_item').first();
+					}else{
+						nextItem = item.next();
+					}
+						nextItem.addClass('active_item');
+				}, speed);
+			}
+	}
+	function changeColor (color) {
+		$('#activeItem').html('.active {background-color: '+color+' !important;}')
+	}
+	function reset_all() {
+		$('.resetmatrix_button').each(function(index, el) {
+			resetmatrix($(el));
+		});	
+	}
+	$(document).on('shown.bs.modal', '#animateModal', function (e) {
+		$('#animateModal .modal-body .frames_section').empty();
+		$('.matrix_table').each(function(index, el) {
+			var frame = $(el).clone();
+			$(frame).find('td').removeAttr("onmousedown").removeAttr("data-id");
+			$('#animateModal .modal-body .frames_section').append('<li class="animate_item">'+frame.html()+'</li>');
+		});
+			$('#animateModal .frames_section .animate_item').first().addClass('active_item')
+		toogleAnimate();
+	});
+	$(document).on('hidden.bs.modal', '#animateModal', function (e) {
+		$('#animation_control').addClass('start_animation');
+	});
+	$(document).on('shown.bs.modal', '#myModal', function (e) {
+		  var value = '';
+	    $('.txtBinary').each(function(index, el) {
+	    	value+= $(el).val();
+	    	value+= '\n';
+	    });
+	    $('#code').text(value);
+	});
