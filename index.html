@@ -6,6 +6,7 @@
     <title>FETLab</title>
 
     <link rel="stylesheet" href="assets/reset.css">
+
     <link rel="stylesheet" href="assets/pure-min.css">
     <link rel="stylesheet" href="assets/marketing.css">
     <link rel="stylesheet" href="assets/modal.css">
@@ -36,8 +37,8 @@
             <a class="pure-menu-heading" href="" style="font-family: 'Montserrat', sans-serif;">FETLAB | WOMEN IN COMPUTING DEMO DAY</a>
            
         <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="javascript:new_matrix()" class="pure-menu-link">New Frame</a></li>
-            <li class="pure-menu-item"><a href="javascript:reset_all()" class="pure-menu-link">Reset All</a></li>
+            <li class="pure-menu-item"><a href="javascript:newMatrix()" class="pure-menu-link">New Frame</a></li>
+            <li class="pure-menu-item"><a href="javascript:resetAll()" class="pure-menu-link">Reset All</a></li>
             <li class="pure-menu-item"><a href="#myModal" class="pure-menu-link" data-toggle="modal">Export</a></li>
             <!-- remove js: export-url() -->
             <li class="pure-menu-item"><a href="#animateModal" class="pure-menu-link" data-toggle="modal">Animate</a></li>
@@ -151,7 +152,7 @@
 
             <div class="pure-u-3-24 matrix_control">
                 <div class="reset_button pure-u-24-24">
-                    <button class=" button pure-button pure-button-active resetmatrix_button" onclick="resetmatrix($(this))">Reset</button>
+                    <button class=" button pure-button pure-button-active resetmatrix_button" onclick="resetMatrix($(this))">Reset</button>
                 </div>
                 <textarea class="pure-u-24-24 txtBinary" onpaste="updateBinary($(this))" onkeyup="updateBinary($(this))" cols="14" rows="9">
 
