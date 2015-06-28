@@ -6,7 +6,7 @@
 
 	});
 	function switchValue(obj) {
-	    if (obj.text() == "0") {
+	    if (obj.text() === "0") {
 	        obj.addClass("active");
 	        obj.text('1');
 	    } else {
@@ -17,7 +17,7 @@
 	    generateBinary(obj.parents('.matrix_section').find('.pure-table'));
 	}
 
-	function resetmatrix(obj) {
+	function resetMatrix(obj) {
 	    var tdObj = obj.parents('.matrix_section').find('.pure-table');
 	    for (var i = 1; i < 65; i++) {
 	        var item = tdObj.find('td[data-id=' + i + ']');
@@ -29,7 +29,7 @@
 
 	function generateBinary(item) {
 
-	    if (item == null)
+	    if (item === null)
 	        var matrix = $('.matrix_section').find('.pure-table');
 	    else
 	        var matrix = item;
@@ -37,19 +37,19 @@
 	    var value = '';
 	    for (var i = 1; i < 65; i++) {
 	        tdObj = matrix.find('td[data-id=' + i + ']');
-	        if (((i - 1) == 0) || (((i - 1) % 8) == 0)) {
-	            if (i - 1 == 0)
+	        if (((i - 1) === 0) || (((i - 1) % 8) === 0)) {
+	            if (i - 1 === 0)
 	                value += "{B";
 	            else
 	                value +=  "B";
 	        }
-	        if (tdObj.text() == "0") {
+	        if (tdObj.text() === "0") {
 	            value += "0";
 	        } else {
 	            value += "1";
 	        }
-	        if ((i % 8) == 0) {
-	            if (i != 64)
+	        if ((i % 8) === 0) {
+	            if (i !== 64)
 	                value += ",\n";
 	            else
 	                value += "}";
@@ -60,7 +60,7 @@
 
 	function updateBinary(obj) {
 	    var value = obj.val();
-	    if (value == '')
+	    if (value === '')
 	        return false;
 	    var table = obj.parents('.matrix_section').find('.pure-table');
 	    var data = value.split('\n').join('');
@@ -68,42 +68,32 @@
 
 	    numb = numb.join("");
 	    var binaryCount = 0;
-	    if (numb.match(/0/g) != null)
+	    if (numb.match(/0/g) !== null)
 	        binaryCount += numb.match(/0/g).length;
-	    if (numb.match(/1/g) != null)
+	    if (numb.match(/1/g) !== null)
 	        binaryCount += numb.match(/1/g).length;
 
-	    if (numb.length != 64 || binaryCount != 64 || binaryCount != numb.length)
+	    if (numb.length !== 64 || binaryCount !== 64 || binaryCount !== numb.length)
 	        return false;
 	    var num_length = numb.length;
 	    for (var i = 0; i < num_length; i++) {
 	        var item = table.find('td[data-id=' + (i + 1) + ']');
 	        item.text(numb[i]);
-	        if (item.text() == "1")
+	        if (item.text() === "1")
 	            item.addClass("active");
 	        else
 	            item.removeClass("active");
 	    };
 	}
 
-	function new_matrix() {
+	function newMatrix() {
 	    $('.container').append('<div class="matrix_section">' + matrix_content + '</div>');
 	    $(document).find('.matrix_section').last().find('.matrix_name').text('Frame ' + $('.matrix_section').size())
 	    generateBinary($(document).find('.matrix_section').last().find('.pure-table'));
 	}
 
-	function export_url() {
-	    var value = '';
-	    $('.txtBinary').each(function(index, el) {
-	    	value+= $(el).val();
-	    });
-	    var url = 'export/index.html?data='+value;
-		var win = window.open(url, '_blank');
-  		win.focus();
-	}
-
 	function toogleAnimate() {
-			if(typeof animation != "undefined")
+			if(typeof animation !== "undefined")
 				clearInterval(animation)
 		
 			if($('#animation_control').hasClass('start_animation')){
@@ -113,7 +103,7 @@
 					var item = $('#animateModal .frames_section .animate_item.active_item');
 					item.removeClass('active_item');
 
-					if(item.next().length == 0){
+					if(item.next().length === 0){
 						nextItem = $('#animateModal .frames_section .animate_item').first();
 					}else{
 						nextItem = item.next();
@@ -128,14 +118,14 @@
 
 	}
 	function speedChange() {
-			if(typeof animation != "undefined"){
+			if(typeof animation !== "undefined"){
 				clearInterval(animation)
 			var speed = $('#animation_speed').val();
 			animation = setInterval(function() {
 					var item = $('#animateModal .frames_section .animate_item.active_item');
 					item.removeClass('active_item');
 
-					if(item.next().length == 0){
+					if(item.next().length === 0){
 						nextItem = $('#animateModal .frames_section .animate_item').first();
 					}else{
 						nextItem = item.next();
@@ -147,7 +137,7 @@
 	function changeColor (color) {
 		$('#activeItem').html('.active {background-color: '+color+' !important;}')
 	}
-	function reset_all() {
+	function resetAll() {
 		$('.resetmatrix_button').each(function(index, el) {
 			resetmatrix($(el));
 		});	
