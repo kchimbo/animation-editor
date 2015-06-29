@@ -53,9 +53,9 @@ function generateBinary (item) {
 		tdObj = matrix.find('td[data-id=' + i + ']');
 		if (((i - 1) === 0) || (((i - 1) % 8) === 0)) {
 			if (i - 1 === 0) {
-				value += "{b";
+				value += "B";
 			} else {
-				value +=  "b";
+				value +=  "B";
 			}
 		}
 		if (tdObj.text() === "0") {
@@ -67,7 +67,7 @@ function generateBinary (item) {
 			if (i !== 64) {
 				value += ",\n";
 			} else {
-				value += "}";
+				value += ",";
 			}
 		}
 	}
@@ -207,7 +207,7 @@ $(document).on('shown.bs.modal', '#myModal', function (e) {
 	  var value = '';
 	$('.txtBinary').each(function(index, el) {
 		value+= $(el).val();
-		value+= '\n';
+		value+= '\n25, \n';
 	});
 	$('#code').text(value);
 });
