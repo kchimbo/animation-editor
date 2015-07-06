@@ -37,6 +37,27 @@ function resetMatrix (obj) {
 }
 
 /**
+ * Copies the frame 
+ * @param  {object} the copy button
+ */
+function copyMatrix (obj) {
+	var frame = obj.parents('.matrix_section');
+	$('<div class="matrix_section">' + frame.html() + '</div>').insertAfter(frame);
+	frameNameNormalize();
+	var table = frame.next().find('.pure-table');
+	generateBinary(table);
+
+}
+/**
+ * Deletes the frame 
+ * @param  {object} the delete button
+ */
+function deleteMatrix(obj) {
+	obj.parents('.matrix_section').remove();
+	frameNameNormalize();
+	return false;
+}
+/**
  * Generates the binary data for the frame
  * @param  {[object]} the frame
  */
@@ -178,12 +199,48 @@ function changeColor (color) {
 }
 
 /**
+ * Normalize the frames name
+ */
+function frameNameNormalize() {
+	$('.matrix_section').each(function(index, el) {
+		var number = index +1;
+		$(el).find('.matrix_name').text('Frame ' + number);		
+	});
+}
+/**
  * Resets all the frames.
  */ 
 function resetAll() {
 	$('.resetmatrix_button').each(function(index, el) {
 		resetMatrix($(el));
 	});	
+}
+
+/**
+ * Loads the frames from existing coe
+ */
+function importFrames() {
+	var data = $('#importCode').val().split('\n');
+	var row = '';
+	result = [];
+	for (var i = 0; i < data.length; i++) {
+		if(data[i].length <= 9 && data[i].length >= 3){
+			result.push(row);
+			row = '';
+		}
+		else{
+			row += data[i]+'\n';
+		}
+	};
+	for (var i = 0; i < result.length; i++) {
+		$('.container').append('<div class="matrix_section">' + matrix_content + '</div>');
+		$(document).find('.matrix_section').last().find('.matrix_name').text('Frame ' + $('.matrix_section').size());
+		// if (result[i].splice(-2)) {};
+		console.log;(result[i].substr(result[i].length -1))
+		$(document).find('.matrix_section').last().find('.txtBinary').val(result[i]);
+		updateBinary($(document).find('.matrix_section').last().find('.txtBinary'));
+
+	};
 }
 
 $(document).on('shown.bs.modal', '#animateModal', function (e) {

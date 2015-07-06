@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>FETLab</title>
+    <title></title>
 
     <link rel="stylesheet" href="assets/reset.css">
 
@@ -40,6 +40,7 @@
             <li class="pure-menu-item"><a href="javascript:newMatrix()" class="pure-menu-link">New Frame</a></li>
             <li class="pure-menu-item"><a href="javascript:resetAll()" class="pure-menu-link">Reset All</a></li>
             <li class="pure-menu-item"><a href="#myModal" class="pure-menu-link" data-toggle="modal">Export</a></li>
+            <li class="pure-menu-item"><a href="#import-Modal" class="pure-menu-link" data-toggle="modal">Import</a></li>
             <!-- remove js: export-url() -->
             <li class="pure-menu-item"><a href="#animateModal" class="pure-menu-link" data-toggle="modal">Animate</a></li>
         </ul>
@@ -151,8 +152,10 @@
             </div>
 
             <div class="pure-u-3-24 matrix_control">
-                <div class="reset_button pure-u-24-24">
-                    <button class=" button pure-button pure-button-active resetmatrix_button" onclick="resetMatrix($(this))">Reset</button>
+                <div class="control-buttons pure-u-24-24">
+                    <button class=" button pure-button pure-button-active resetmatrix_button pull-left" onclick="resetMatrix($(this))">Reset</button>
+                    <button class=" button pure-button pure-button-active copymatrix_button pull-left" onclick="copyMatrix($(this))">Copy</button>
+                    <button class=" button pure-button pure-button-active deleteMatrix_button pull-left" onclick="deleteMatrix($(this))">Delete</button>
                 </div>
                 <textarea class="pure-u-24-24 txtBinary" onpaste="updateBinary($(this))" onkeyup="updateBinary($(this))" cols="14" rows="9">
 
@@ -181,6 +184,28 @@
     </div>
 
     <div class="modal-footer">
+        <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+    </div>
+
+        <!-- ***************************** -->
+    <!-- ******  import window  ****** -->
+    <!-- ***************************** -->
+
+    <div id="import-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="import-ModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <h1 id="import-ModalLabel">Import</h1>
+    </div>
+
+    <div class="modal-body">
+
+        <form class="pure-form pure-form-stacked">
+            <textarea id="importCode" style="width: 100%; height: 300px; resize: none" placeholder=""></textarea>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="pure-button" data-dismiss="modal" onclick="importFrames()" aria-hidden="true">Import</button>
         <button class="pure-button" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
     </div>

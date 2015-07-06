@@ -1,4 +1,11 @@
 
+        .pull-left{
+            float: left;
+        }
+        .pull-right{
+            float: right;
+        }
+
         .matrix_table {
             min-width: 330px;
         }
@@ -11,9 +18,16 @@
         .matrix_section {
               text-align: center;
         }
-        
-        .matrix_section td {
+        table.pure-table.pure-table-bordered{
+            border-collapse:separate; 
+            border-spacing:0.2em;
+        }
+        table.pure-table.pure-table-bordered td{
             cursor: pointer;
+            border: 0;
+            border-radius: 50px;
+            background-color: black;
+            color: white;
         }
         
         .matrix_control {
@@ -21,12 +35,22 @@
               min-width: 130px;
         }
         
-        .reset_button {
+        .control-buttons {
             padding: 3px;
             text-align: center;
             margin-bottom: 19px;
         }
-        
+        .control-buttons .pure-button{
+              width: 30%;
+              padding: 0;
+              margin: 0;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              margin-right: 5%;
+        }
+        .control-buttons .pure-button.deleteMatrix_button{
+              margin:0;
+        }
         .new_matrix {
             padding: 20px 0 20px 0;
             text-align: right;
