@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="assets/modal.css">
     <link rel="stylesheet" href="assets/jquery.simplecolorpicker.css">
     <link rel="stylesheet" href="assets/style.css">
-    <style id="activeItem">
-        .active {background-color: #dc2127 !important;}
-    </style>
+
     <!-- fonts : monsertat for the header, roboto for the body -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -34,14 +32,12 @@
 
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading pull-left" href="" style="font-family: 'Montserrat', sans-serif;">FETLAB | WOMEN IN COMPUTING DEMO DAY</a>
+            <a class="pure-menu-heading pull-left page_title" href="index.html">FETLAB | WOMEN IN COMPUTING DEMO DAY</a>
            
         <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="javascript:newMatrix()" class="pure-menu-link">New Frame</a></li>
             <li class="pure-menu-item"><a href="javascript:resetAll()" class="pure-menu-link">Reset All</a></li>
             <li class="pure-menu-item"><a href="#myModal" class="pure-menu-link" data-toggle="modal">Export</a></li>
             <li class="pure-menu-item"><a href="#import-Modal" class="pure-menu-link" data-toggle="modal">Import</a></li>
-            <!-- remove js: export-url() -->
             <li class="pure-menu-item"><a href="#animateModal" class="pure-menu-link" data-toggle="modal">Animate</a></li>
         </ul>
         <div class="colorpicker">
@@ -63,7 +59,7 @@
     <div class="container">
         <br/><br />
         <div class="matrix_section ">
-            <h2 class="matrix_name" style="font-family: 'Roboto', sans-serif;">Frame 1</h2>
+            <h2 class="matrix_name">Frame 1</h2>
             <div class="pure-u-6-24 matrix_table">
                 <table class="pure-table pure-table-bordered">
                     <tbody>
@@ -180,7 +176,7 @@
         </p>
 
         <form class="pure-form pure-form-stacked">
-            <textarea id="code" style="width: 100%; height: 300px; resize: none" placeholder=""></textarea>
+            <textarea id="code" placeholder=""></textarea>
         </form>
     </div>
 
@@ -201,7 +197,7 @@
     <div class="modal-body">
 
         <form class="pure-form pure-form-stacked">
-            <textarea id="importCode" style="width: 100%; height: 300px; resize: none" placeholder=""></textarea>
+            <textarea id="importCode" placeholder=""></textarea>
         </form>
     </div>
 

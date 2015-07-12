@@ -1,3 +1,12 @@
+        .active {
+            background-color: #dc2127 !important;
+        }
+
+        textarea {
+            width: 100%; 
+            height: 300px; 
+            resize: none;
+        }
 
         .pull-left{
             float: left;
@@ -14,6 +23,7 @@
             resize: none;
             font-size: 1.5em;
             text-align: center;
+            height: 225px;
         }
         
         .matrix_section {
@@ -63,6 +73,7 @@
             right: 20px;
         }
         .matrix_name{
+            font-family: 'Roboto', sans-serif;
             padding: 10px;
         }
         .container{
@@ -79,6 +90,11 @@
         }
         #animateModal > div.modal-body  li.animate_item > table.pure-table-bordered{
             margin: 0 auto;
+        }
+
+        .page_title
+        {
+            font-family: 'Montserrat', sans-serif;
         }
         .colorpicker{
             display: initial;
