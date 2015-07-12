@@ -143,6 +143,18 @@ function newMatrix() {
 }
 
 /**
+ * Inserts a new matrix after the frame that calls this method.
+ * @param  {object} the frame
+ */
+function newMatrixAfter(obj) {
+	var frame = obj.parents('.matrix_section');
+	$('<div class="matrix_section">' + matrix_content + '</div>').insertAfter(frame);
+	frameNameNormalize();
+	var table = frame.next().find('.pure-table');
+	generateBinary(table);
+}
+
+/**
  * Starts and stops the animation
  */
 function toogleAnimate() {

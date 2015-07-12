@@ -152,10 +152,11 @@
             </div>
 
             <div class="pure-u-3-24 matrix_control">
-                <div class="control-buttons pure-u-24-24">
-                    <button class=" button pure-button pure-button-active resetmatrix_button pull-left" onclick="resetMatrix($(this))">Reset</button>
+                 <div class="control-buttons pure-u-24-24">
+                    <button class=" button pure-button pure-button-active resetmatrix_button pull-left" onclick="newMatrixAfter($(this))">New</button>
+                    <button class=" button pure-button pure-button-active resetmatrix_button pull-left right-button" onclick="resetMatrix($(this))">Reset</button>
                     <button class=" button pure-button pure-button-active copymatrix_button pull-left" onclick="copyMatrix($(this))">Copy</button>
-                    <button class=" button pure-button pure-button-active deleteMatrix_button pull-left" onclick="deleteMatrix($(this))">Delete</button>
+                    <button class=" button pure-button pure-button-active deleteMatrix_button pull-left right-button" onclick="deleteMatrix($(this))">Delete</button>
                 </div>
                 <textarea class="pure-u-24-24 txtBinary" onpaste="updateBinary($(this))" onkeyup="updateBinary($(this))" cols="14" rows="9">
 
