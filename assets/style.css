@@ -1,142 +1,142 @@
-        .active {
-            background-color: #dc2127 !important;
-        }
+.active {
+    background-color: #dc2127 !important;
+}
 
-        textarea {
-            width: 100%; 
-            height: 300px; 
-            resize: none;
-        }
+textarea {
+    width: 100%; 
+    height: 300px; 
+    resize: none;
+}
 
-        .pull-left{
-            float: left;
-        }
-        .pull-right{
-            float: right;
-        }
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
 
-        .matrix_table {
-            min-width: 330px;
-        }
-        
-        .txtBinary {
-            resize: none;
-            font-size: 1.5em;
-            text-align: center;
-            height: 225px;
-        }
-        
-        .matrix_section {
-              text-align: center;
-        }
-        table.pure-table.pure-table-bordered{
-            border-collapse:separate; 
-            border-spacing:0.2em;
-        }
-        table.pure-table.pure-table-bordered td{
-            cursor: pointer;
-            border: 0;
-            border-radius: 50px;
-            background-color: black;
-            color: white;
-        }
-        
-        .matrix_control {
-            margin-left: 100px;
-            min-width: 210px;
-        }
-        
-        .control-buttons {
-            padding: 3px;
-            text-align: center;
-            margin-bottom: 19px;
-        }
-        .control-buttons .pure-button{
-          width: 47.5%;
-          padding: 5%;
-          margin: 0 5% 5% 0;
-        }
-        .control-buttons .pure-button.right-button{
-            margin:0 !important; 
-        }
-        .control-buttons .pure-button.deleteMatrix_button{
-              margin:0;
-        }
-        .new_matrix {
-            padding: 20px 0 20px 0;
-            text-align: right;
-        }
-        
-        .new_matrix .button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-        .matrix_name{
-            font-family: 'Roboto', sans-serif;
-            padding: 10px;
-        }
-        .container{
-          padding-bottom: 100px;
-        }
-        #animateModal .frames_section .animate_item{
-            display: none;
-        }
-        #animateModal .frames_section .animate_item.active_item{
-            display: block;
-        }
-        #animation_control{
-            width: 100px;
-        }
-        #animateModal > div.modal-body  li.animate_item > table.pure-table-bordered{
-            margin: 0 auto;
-        }
+.matrix_table {
+    min-width: 330px;
+}
 
-        .page_title
-        {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .colorpicker{
-            display: initial;
-            float: right;
-        }
+.txtBinary {
+    resize: none;
+    font-size: 1.5em;
+    text-align: center;
+    height: 225px;
+}
 
-        @media  (max-width: 981px) {
-            .header > div.home-menu.pure-menu{
-                zoom: 0.8;
-            }
-            
-        }
+.matrix_section {
+      text-align: center;
+}
+table.pure-table.pure-table-bordered{
+    border-collapse:separate; 
+    border-spacing:0.2em;
+}
+table.pure-table.pure-table-bordered td{
+    cursor: pointer;
+    border: 0;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+}
 
-        @media  (max-width: 820px) {
-            .header > div.home-menu.pure-menu{
-                zoom: 0.77;
-            }
-        }
-        @media  (max-width: 767px) {
-            .matrix_section{
-                margin-top: 40px;
-            }
-            .colorpicker{
-                display: block;
-                float: initial;
-            }
-            .header > div.home-menu.pure-menu{
-                zoom: 1;
-            }
-        }
-        @media  (max-width: 666px) {
-            .matrix_control {
-              margin-left: 50px;
-            }
-        }
-        @media  (max-width: 610px) {
-            .matrix_control {
-              margin-left: 0;
-              margin-right: 50px;
-              margin-top: 20px;
-            }
-            .pure-table td, .pure-table th {
-              padding: .5em .98em;
-            }
-        }
+.matrix_control {
+    margin-left: 100px;
+    min-width: 210px;
+}
+
+.control-buttons {
+    padding: 3px;
+    text-align: center;
+    margin-bottom: 19px;
+}
+.control-buttons .pure-button{
+  width: 47.5%;
+  padding: 5%;
+  margin: 0 5% 5% 0;
+}
+.control-buttons .pure-button.right-button{
+    margin:0 !important; 
+}
+.control-buttons .pure-button.deleteMatrix_button{
+      margin:0;
+}
+.new_matrix {
+    padding: 20px 0 20px 0;
+    text-align: right;
+}
+
+.new_matrix .button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.matrix_name{
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+}
+.container{
+  padding-bottom: 100px;
+}
+#animateModal .frames_section .animate_item{
+    display: none;
+}
+#animateModal .frames_section .animate_item.active_item{
+    display: block;
+}
+#animation_control{
+    width: 100px;
+}
+#animateModal > div.modal-body  li.animate_item > table.pure-table-bordered{
+    margin: 0 auto;
+}
+
+.page_title
+{
+    font-family: 'Montserrat', sans-serif;
+}
+.colorpicker{
+    display: initial;
+    float: right;
+}
+
+@media  (max-width: 981px) {
+    .header > div.home-menu.pure-menu{
+        zoom: 0.8;
+    }
+    
+}
+
+@media  (max-width: 820px) {
+    .header > div.home-menu.pure-menu{
+        zoom: 0.77;
+    }
+}
+@media  (max-width: 767px) {
+    .matrix_section{
+        margin-top: 40px;
+    }
+    .colorpicker{
+        display: block;
+        float: initial;
+    }
+    .header > div.home-menu.pure-menu{
+        zoom: 1;
+    }
+}
+@media  (max-width: 666px) {
+    .matrix_control {
+      margin-left: 50px;
+    }
+}
+@media  (max-width: 610px) {
+    .matrix_control {
+      margin-left: 0;
+      margin-right: 50px;
+      margin-top: 20px;
+    }
+    .pure-table td, .pure-table th {
+      padding: .5em .98em;
+    }
+}
