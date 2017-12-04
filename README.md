@@ -2,6 +2,8 @@
 
 ![Image of the Animation Editor](https://raw.githubusercontent.com/kchimbo/animation-editor/master/screenshot--2017-12-04-14-28-58.png)
 
+## [DEMO](https://osamufujimoto.com/projects/animation-editor/)
+
 ## Description
 
 Animation Editor developed for a Workshop held by [Women in Computing](http://wic.rit.edu) & the [Future Everyday Technology Research Lab](http://fetlab.rit.edu).
